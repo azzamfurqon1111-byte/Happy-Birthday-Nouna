@@ -90,7 +90,7 @@ bermakna untukmu. 🥳
 
 <br>
 
-<img id="stiker" src="https://i.postimg.cc/Jz9YqR4J/cat-birthday.png">
+<img id="stiker" src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif">
 
 <audio id="lagu">
 <source src="https://www2.cs.uic.edu/~i101/SoundFiles/HappyBirthday.mp3" type="audio/mpeg">
@@ -111,7 +111,49 @@ confettiBoom();
 }
 
 
-function confettiBoom(){
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+
+function surprise(){
+
+document.getElementById("stiker").style.display="block";
+document.getElementById("lagu").play();
+
+fireworks();
+
+}
+
+function fireworks(){
+
+var duration = 3000;
+var end = Date.now() + duration;
+
+(function frame(){
+
+confetti({
+particleCount:7,
+angle:60,
+spread:70,
+origin:{x:0}
+});
+
+confetti({
+particleCount:7,
+angle:120,
+spread:70,
+origin:{x:1}
+});
+
+if(Date.now() < end){
+requestAnimationFrame(frame);
+}
+
+})();
+
+}
+
+</script>
 
 for(let i=0;i<120;i++){
 
