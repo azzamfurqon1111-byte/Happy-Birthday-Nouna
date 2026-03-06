@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday</title>
+
+<style>
+
+body{
+background:#ffd6e7;
+font-family:Arial;
+text-align:center;
+padding-top:120px;
+margin:0;
+overflow:hidden;
+}
+
+h1{
+color:#ff3b6b;
+font-size:40px;
+}
+
+p{
+font-size:20px;
+color:#444;
+width:70%;
+margin:auto;
+line-height:1.6;
+}
+
+button{
+margin-top:40px;
+padding:12px 25px;
+border:none;
+background:#ff3b6b;
+color:white;
+border-radius:25px;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#ff5a7d;
+}
+
+@keyframes fall{
+to{
+transform:translateY(100vh);
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Happy Birthday 🎉</h1>
+
+<p>
+Semoga hari ini menyenangkan untukmu.
+</p>
+
+<p>
+Semoga kamu selalu diberi kesehatan, hati yang tenang,
+dan semua hal baik pelan-pelan datang ke hidupmu.
+</p>
+
+<p style="margin-top:30px;">
+Terima kasih sudah menjadi orang yang menyenangkan
+untuk diajak ngobrol dan bermain sejauh ini.
+</p>
+
+<button onclick="openWish()">Open Birthday Wish</button>
+
+<script>
+
+function openWish(){
+alert("Semoga tahun ini membawa banyak hal baik untukmu 🎉");
+}
+
+setInterval(()=>{
+let heart=document.createElement("div");
+heart.innerHTML="❤️";
+heart.style.position="fixed";
+heart.style.left=Math.random()*100+"vw";
+heart.style.top="-20px";
+heart.style.fontSize="20px";
+heart.style.animation="fall 3s linear";
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},3000);
+
+},500);
+
+</script>
+
+</body>
+</html>
