@@ -8,7 +8,7 @@
 
 body{
 background:#ffd6e7;
-font-family:Arial;
+font-family:Arial, sans-serif;
 text-align:center;
 margin:0;
 overflow:hidden;
@@ -78,11 +78,11 @@ animation:fall 5s linear infinite;
 Ternyata kamu ulang tahun hari ini,<br>
 pantes aja cuaca cerah banget haha.<br><br>
 
-Semoga kamu selalu sehat, semua
-doa dan yang kamu impikan bisa tercapai satu per satu.<br><br>
+Semoga kamu selalu sehat dan semua
+yang kamu impikan bisa tercapai satu per satu.<br><br>
 
 Semoga tahun ini menjadi tahun yang
-bermakna untuk kamu. 🥳
+bermakna untukmu. 🥳
 </p>
 
 <button onclick="surprise()">Klik ini 🎁</button>
@@ -103,19 +103,19 @@ bermakna untuk kamu. 🥳
 function surprise(){
 
 document.getElementById("stiker").style.display="block";
-var musik = document.getElementById("lagu");
-musik.currentTime = 0;
+
+var musik=document.getElementById("lagu");
+musik.currentTime=0;
 musik.play();
 
 fireworks();
 
 }
 
-
 function fireworks(){
 
-var duration = 3000;
-var end = Date.now()+duration;
+var duration=3000;
+var end=Date.now()+duration;
 
 (function frame(){
 
