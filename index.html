@@ -90,7 +90,7 @@ bermakna untuk kamu. 🥳
 <img id="stiker" src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif">
 
 <audio id="lagu">
-<source src="https://www2.cs.uic.edu/~i101/SoundFiles/HappyBirthday.mp3" type="audio/mpeg">
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=happy-birthday-to-you-13237.mp3" type="audio/mpeg">
 </audio>
 
 </div>
@@ -103,7 +103,9 @@ bermakna untuk kamu. 🥳
 function surprise(){
 
 document.getElementById("stiker").style.display="block";
-document.getElementById("lagu").play();
+var musik = document.getElementById("lagu");
+musik.currentTime = 0;
+musik.play();
 
 fireworks();
 
