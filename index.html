@@ -1,93 +1,74 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 <title>Happy Birthday Nouna</title>
 
 <style>
 
 body{
-    background:#f7c6d0;
-    font-family:Arial;
-    text-align:center;
-    padding-top:100px;
-}
-
-h1{
-    font-size:55px;
-    color:#ff4f7a;
-}
-
-p{
-    font-size:24px;
-    width:65%;
-    margin:auto;
-    line-height:1.8;
-    color:#444;
+background:#ffd6e7;
+font-family:Arial;
+text-align:center;
+margin:0;
+overflow:hidden;
 }
 
 .card{
-    background:white;
-    padding:50px;
-    width:70%;
-    margin:auto;
-    border-radius:15px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+background:white;
+width:80%;
+max-width:500px;
+margin:120px auto;
+padding:40px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1{
+color:#ff4d88;
+font-size:38px;
+margin-bottom:20px;
+}
+
+p{
+font-size:18px;
+line-height:1.6;
+color:#444;
 }
 
 button{
-    margin-top:30px;
-    padding:15px 30px;
-    font-size:18px;
-    border:none;
-    border-radius:10px;
-    background:#ff4f7a;
-    color:white;
-    cursor:pointer;
+background:#ff4d88;
+color:white;
+border:none;
+padding:15px 25px;
+font-size:18px;
+border-radius:10px;
+cursor:pointer;
+margin-top:20px;
 }
 
 #stiker{
-    display:none;
-    margin-top:25px;
-    width:250px;
+display:none;
+margin-top:20px;
+width:220px;
 }
 
-</style>
-
-</head>
-<style>
 .heart{
 position:fixed;
-top:-10px;
+top:-20px;
 font-size:20px;
-animation:fall linear forwards;
+animation:fall 5s linear infinite;
 }
 
 @keyframes fall{
-to{
-transform:translateY(100vh);
-opacity:0;
+0%{transform:translateY(-20px)}
+100%{transform:translateY(110vh)}
 }
-}
+
 </style>
+</head>
 
-<script>
-function createHeart(){
-const heart=document.createElement("div");
-heart.className="heart";
-heart.innerHTML="❤️";
 
-heart.style.left=Math.random()*100+"vw";
-heart.style.animationDuration=(Math.random()*3+2)+"s";
-
-document.body.appendChild(heart);
-
-setTimeout(()=>{
-heart.remove();
-},5000);
-}
-
-setInterval(createHeart,300);
-</script>
 <body>
 
 <div class="card">
@@ -95,55 +76,79 @@ setInterval(createHeart,300);
 <h1>Happy Birthday Nouna 🎉</h1>
 
 <p>
-Ternyata kamu ulang tahun hari ini,
-pantes aja cuaca cerah banget haha.
+Ternyata kamu ulang tahun hari ini,<br>
+pantes aja cuaca cerah banget haha.<br><br>
+
+Semoga kamu selalu sehat dan semua<br>
+yang kamu impikan bisa tercapai satu per satu.<br><br>
+
+Semoga tahun ini menjadi tahun yang<br>
+bermakna untukmu. 🥳
 </p>
 
-<p>
-Semoga kamu selalu sehat dan semua yang kamu impikan
-bisa tercapai satu per satu.
-</p>
-
-<p>
-Semoga tahun ini menjadi tahun yang bermakna untuk kamu. 🥳
-</p>
-
-<button onclick="showStiker();confetti()">Klik ini 🎁</button>
-<script>
-function confetti(){
-for(let i=0;i<30;i++){
-let c=document.createElement("div");
-c.innerHTML="🎉";
-c.style.position="fixed";
-c.style.left=Math.random()*100+"vw";
-c.style.top="-20px";
-c.style.fontSize="24px";
-c.style.animation="fall 3s linear";
-document.body.appendChild(c);
-
-setTimeout(()=>{c.remove()},3000);
-}
-}
-</script>
+<button onclick="surprise()">Klik ini 🎁</button>
 
 <br>
 
-<img id="stiker" src="https://media.tenor.com/qJ5evVs-_uUAAAAC/cat-birthday.gif">
+<img id="stiker" src="https://i.postimg.cc/Jz9YqR4J/cat-birthday.png">
 
 <audio id="lagu">
-<source src="https://www2.cs.uic.edu/~i101/SoundFiles/HappyBirthday.mid" type="audio/midi">
+<source src="https://www2.cs.uic.edu/~i101/SoundFiles/HappyBirthday.mp3" type="audio/mpeg">
 </audio>
 
 </div>
 
+
 <script>
 
-function showStiker(){
+function surprise(){
+
 document.getElementById("stiker").style.display="block";
 document.getElementById("lagu").play();
+
+confettiBoom();
+
 }
 
+
+function confettiBoom(){
+
+for(let i=0;i<120;i++){
+
+let c=document.createElement("div");
+
+c.innerHTML="🎉";
+c.style.position="fixed";
+c.style.left=Math.random()*100+"vw";
+c.style.top=Math.random()*100+"vh";
+c.style.fontSize="24px";
+
+document.body.appendChild(c);
+
+setTimeout(()=>{c.remove()},2000);
+
+}
+
+}
+
+
+
+setInterval(()=>{
+
+let heart=document.createElement("div");
+
+heart.innerHTML="❤️";
+heart.className="heart";
+heart.style.left=Math.random()*100+"vw";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{heart.remove()},5000);
+
+},400);
+
 </script>
+
 
 </body>
 </html>
