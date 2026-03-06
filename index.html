@@ -1,98 +1,98 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Happy Birthday</title>
+<title>Happy Birthday Nouna</title>
 
 <style>
 
 body{
-background:#ffd6e7;
-font-family:Arial;
-text-align:center;
-padding-top:120px;
-margin:0;
-overflow:hidden;
+    background:#f7c6d0;
+    font-family:Arial;
+    text-align:center;
+    padding-top:100px;
 }
 
 h1{
-color:#ff3b6b;
-font-size:40px;
+    font-size:55px;
+    color:#ff4f7a;
 }
 
 p{
-font-size:20px;
-color:#444;
-width:70%;
-margin:auto;
-line-height:1.6;
+    font-size:24px;
+    width:65%;
+    margin:auto;
+    line-height:1.8;
+    color:#444;
+}
+
+.card{
+    background:white;
+    padding:50px;
+    width:70%;
+    margin:auto;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
 }
 
 button{
-margin-top:40px;
-padding:12px 25px;
-border:none;
-background:#ff3b6b;
-color:white;
-border-radius:25px;
-font-size:16px;
-cursor:pointer;
+    margin-top:30px;
+    padding:15px 30px;
+    font-size:18px;
+    border:none;
+    border-radius:10px;
+    background:#ff4f7a;
+    color:white;
+    cursor:pointer;
 }
 
-button:hover{
-background:#ff5a7d;
-}
-
-@keyframes fall{
-to{
-transform:translateY(100vh);
-}
+#stiker{
+    display:none;
+    margin-top:25px;
+    width:250px;
 }
 
 </style>
+
 </head>
 
 <body>
 
-<h1>Happy Birthday 🎉</h1>
+<div class="card">
+
+<h1>Happy Birthday Nouna 🎉</h1>
 
 <p>
-Semoga hari ini menyenangkan untukmu.
+Ternyata kamu ulang tahun hari ini,
+pantes aja cuaca cerah banget haha.
 </p>
 
 <p>
-Semoga kamu selalu diberi kesehatan, hati yang tenang,
-dan semua hal baik pelan-pelan datang ke hidupmu.
+Semoga kamu selalu sehat dan semua yang kamu impikan
+bisa tercapai satu per satu.
 </p>
 
-<p style="margin-top:30px;">
-Terima kasih sudah menjadi orang yang menyenangkan
-untuk diajak ngobrol dan bermain sejauh ini.
+<p>
+Semoga tahun ini menjadi tahun yang bermakna untukmu. 🥳
 </p>
 
-<button onclick="openWish()">Open Birthday Wish</button>
+<button onclick="showStiker()">Klik ini 🎁</button>
+
+<br>
+
+<img id="stiker" src="https://i.imgur.com/1X4J8pP.jpeg">
+
+<audio id="lagu">
+<source src="https://www2.cs.uic.edu/~i101/SoundFiles/HappyBirthday.mid" type="audio/midi">
+</audio>
+
+</div>
 
 <script>
 
-function openWish(){
-alert("Semoga tahun ini membawa banyak hal baik untukmu 🎉");
+function showStiker(){
+document.getElementById("stiker").style.display="block";
+document.getElementById("lagu").play();
 }
-
-setInterval(()=>{
-let heart=document.createElement("div");
-heart.innerHTML="❤️";
-heart.style.position="fixed";
-heart.style.left=Math.random()*100+"vw";
-heart.style.top="-20px";
-heart.style.fontSize="20px";
-heart.style.animation="fall 3s linear";
-document.body.appendChild(heart);
-
-setTimeout(()=>{
-heart.remove();
-},3000);
-
-},500);
 
 </script>
 
