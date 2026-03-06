@@ -54,7 +54,40 @@ button{
 </style>
 
 </head>
+<style>
+.heart{
+position:fixed;
+top:-10px;
+font-size:20px;
+animation:fall linear forwards;
+}
 
+@keyframes fall{
+to{
+transform:translateY(100vh);
+opacity:0;
+}
+}
+</style>
+
+<script>
+function createHeart(){
+const heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=(Math.random()*3+2)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},5000);
+}
+
+setInterval(createHeart,300);
+</script>
 <body>
 
 <div class="card">
@@ -72,14 +105,30 @@ bisa tercapai satu per satu.
 </p>
 
 <p>
-Semoga tahun ini menjadi tahun yang bermakna untukmu. 🥳
+Semoga tahun ini menjadi tahun yang bermakna untuk kamu. 🥳
 </p>
 
-<button onclick="showStiker()">Klik ini 🎁</button>
+<button onclick="showStiker();confetti()">Klik ini 🎁</button>
+<script>
+function confetti(){
+for(let i=0;i<30;i++){
+let c=document.createElement("div");
+c.innerHTML="🎉";
+c.style.position="fixed";
+c.style.left=Math.random()*100+"vw";
+c.style.top="-20px";
+c.style.fontSize="24px";
+c.style.animation="fall 3s linear";
+document.body.appendChild(c);
+
+setTimeout(()=>{c.remove()},3000);
+}
+}
+</script>
 
 <br>
 
-<img id="stiker" src="https://i.imgur.com/1X4J8pP.jpeg">
+<img id="stiker" src="https://media.tenor.com/qJ5evVs-_uUAAAAC/cat-birthday.gif">
 
 <audio id="lagu">
 <source src="https://www2.cs.uic.edu/~i101/SoundFiles/HappyBirthday.mid" type="audio/midi">
