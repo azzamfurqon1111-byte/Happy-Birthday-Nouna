@@ -16,31 +16,30 @@ overflow:hidden;
 
 .card{
 background:white;
-width:80%;
+width:85%;
 max-width:500px;
 margin:120px auto;
 padding:40px;
 border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
 }
 
 h1{
 color:#ff4d88;
-font-size:38px;
-margin-bottom:20px;
+font-size:36px;
 }
 
 p{
 font-size:18px;
-line-height:1.6;
 color:#444;
+line-height:1.6;
 }
 
 button{
 background:#ff4d88;
 color:white;
 border:none;
-padding:15px 25px;
+padding:14px 25px;
 font-size:18px;
 border-radius:10px;
 cursor:pointer;
@@ -49,19 +48,20 @@ margin-top:20px;
 
 #stiker{
 display:none;
-margin-top:20px;
 width:220px;
+margin:25px auto;
+display:block;
 }
 
 .heart{
 position:fixed;
-top:-20px;
+top:-10px;
 font-size:20px;
 animation:fall 5s linear infinite;
 }
 
 @keyframes fall{
-0%{transform:translateY(-20px)}
+0%{transform:translateY(-10px)}
 100%{transform:translateY(110vh)}
 }
 
@@ -79,16 +79,14 @@ animation:fall 5s linear infinite;
 Ternyata kamu ulang tahun hari ini,<br>
 pantes aja cuaca cerah banget haha.<br><br>
 
-Semoga kamu selalu sehat dan semua<br>
+Semoga kamu selalu sehat dan semua
 yang kamu impikan bisa tercapai satu per satu.<br><br>
 
-Semoga tahun ini menjadi tahun yang<br>
+Semoga tahun ini menjadi tahun yang
 bermakna untukmu. 🥳
 </p>
 
 <button onclick="surprise()">Klik ini 🎁</button>
-
-<br>
 
 <img id="stiker" src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif">
 
@@ -97,18 +95,6 @@ bermakna untukmu. 🥳
 </audio>
 
 </div>
-
-
-<script>
-
-function surprise(){
-
-document.getElementById("stiker").style.display="block";
-document.getElementById("lagu").play();
-
-confettiBoom();
-
-}
 
 
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
@@ -124,10 +110,11 @@ fireworks();
 
 }
 
+
 function fireworks(){
 
 var duration = 3000;
-var end = Date.now() + duration;
+var end = Date.now()+duration;
 
 (function frame(){
 
@@ -145,7 +132,7 @@ spread:70,
 origin:{x:1}
 });
 
-if(Date.now() < end){
+if(Date.now()<end){
 requestAnimationFrame(frame);
 }
 
@@ -153,32 +140,10 @@ requestAnimationFrame(frame);
 
 }
 
-</script>
-
-for(let i=0;i<120;i++){
-
-let c=document.createElement("div");
-
-c.innerHTML="🎉";
-c.style.position="fixed";
-c.style.left=Math.random()*100+"vw";
-c.style.top=Math.random()*100+"vh";
-c.style.fontSize="24px";
-
-document.body.appendChild(c);
-
-setTimeout(()=>{c.remove()},2000);
-
-}
-
-}
-
-
 
 setInterval(()=>{
 
 let heart=document.createElement("div");
-
 heart.innerHTML="❤️";
 heart.className="heart";
 heart.style.left=Math.random()*100+"vw";
@@ -190,7 +155,6 @@ setTimeout(()=>{heart.remove()},5000);
 },400);
 
 </script>
-
 
 </body>
 </html>
