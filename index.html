@@ -2,16 +2,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Happy Birthday Nouna</title>
+<title>For Nouna</title>
 
 <style>
-
 body{
 background:#ffd6e7;
 font-family:Arial, sans-serif;
 text-align:center;
 margin:0;
-overflow:hidden;
 }
 
 .card{
@@ -26,136 +24,37 @@ box-shadow:0 10px 30px rgba(0,0,0,0.15);
 
 h1{
 color:#ff4d88;
-font-size:36px;
+font-size:32px;
 }
 
 p{
-font-size:18px;
+font-size:17px;
 color:#444;
-line-height:1.6;
+line-height:1.8;
+white-space:pre-line;
 }
-
-button{
-background:#ff4d88;
-color:white;
-border:none;
-padding:14px 25px;
-font-size:18px;
-border-radius:10px;
-cursor:pointer;
-margin-top:20px;
-}
-
-#stiker{
-display:none;
-width:220px;
-margin:25px auto;
-}
-
-.heart{
-position:fixed;
-top:-10px;
-font-size:20px;
-animation:fall 5s linear infinite;
-}
-
-@keyframes fall{
-0%{transform:translateY(-10px)}
-100%{transform:translateY(110vh)}
-}
-
 </style>
 </head>
-
 
 <body>
 
 <div class="card">
 
-<h1>Happy Birthday Nouna 🎉</h1>
+<h1>Hai Kak Nouna</h1>
 
 <p>
-Ternyata kamu ulang tahun hari ini,<br>
-pantes aja cuaca cerah banget haha.<br><br>
+Hai kak Nouna, gimana kabarmu?
+aku ragu mau ngechat karena chatku yang terakhir belum kamu baca.
+Kalau selama ini aku pernah bikin kamu nggak nyaman tanpa sadar, aku minta maaf ya.
 
-Semoga kamu selalu sehat dan semua
-yang kamu impikan bisa tercapai satu per satu.<br><br>
+Aku cuma mau jujur sedikit, aku nyaman sama kamu dan ternyata perasaanku nggak cuma sebatas teman.
+Tapi aku ngerti kok kalau kamu mungkin merasakan yang berbeda, dan itu hak kamu.
 
-Semoga tahun ini menjadi tahun yang
-bermakna untukmu. 🥳
+Makasih ya untuk waktu dan kenangannya yang kemarin 😸
+Maaf cuman bisa lewat sini link yng bahkan belum tentu kamu buka lagi hehe
 </p>
 
-<button onclick="surprise()">Klik ini 🎁</button>
-
-<img id="stiker" src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif">
-
-<audio id="lagu">
-<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=happy-birthday-to-you-13237.mp3" type="audio/mpeg">
-</audio>
-
 </div>
-
-
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-
-<script>
-
-function surprise(){
-
-document.getElementById("stiker").style.display="block";
-
-var musik=document.getElementById("lagu");
-musik.currentTime=0;
-musik.play();
-
-fireworks();
-
-}
-
-function fireworks(){
-
-var duration=3000;
-var end=Date.now()+duration;
-
-(function frame(){
-
-confetti({
-particleCount:7,
-angle:60,
-spread:70,
-origin:{x:0}
-});
-
-confetti({
-particleCount:7,
-angle:120,
-spread:70,
-origin:{x:1}
-});
-
-if(Date.now()<end){
-requestAnimationFrame(frame);
-}
-
-})();
-
-}
-
-
-setInterval(()=>{
-
-let heart=document.createElement("div");
-heart.innerHTML="❤️";
-heart.className="heart";
-heart.style.left=Math.random()*100+"vw";
-
-document.body.appendChild(heart);
-
-setTimeout(()=>{heart.remove()},5000);
-
-},400);
-
-</script>
 
 </body>
 </html>
